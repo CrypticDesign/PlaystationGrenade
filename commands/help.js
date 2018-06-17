@@ -15,6 +15,7 @@ module.exports.run = async (bot, message, args) => {
      .setTitle('Commands')
      .setThumbnail(hicon)
      .setColor(botconfig.blue)
+     .addField("help", "Gives you a list of commands!")
      .addField("ping", "Pong! (Checks Ping)")
      .addField("weather", "Check the weather in a certain area! [Usage: ps!weather <location>]");
      
