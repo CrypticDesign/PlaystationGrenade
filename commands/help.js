@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
      .addField("ping", "Pong! (Checks Ping)")
      .addField("weather", "Check the weather in a certain area! [Usage: ps!weather <location>]");
      
-    return message.author.send(hembed);
+    return message.channel.send(hembed);
     
 }
 
