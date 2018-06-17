@@ -4,9 +4,6 @@ const botconfig = require("../botconfig.json");
 
 module.exports.run = async (bot, message, args) => {
     
-    if(message.author.bot) return;
-    if(message.channel.type === "dm") return;
-    
     message.delete().catch(O_o => {});
     
     let hicon = bot.user.displayAvatarURL;
