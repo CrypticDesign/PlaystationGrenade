@@ -3,9 +3,6 @@ const botconfig = require("../botconfig.json");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
-let xp = require("../xp.json");
-let purple = botconfig.purple;
-
 
 fs.readdir("./commands/", (err, files) => {
   if (err) console.log(err);
@@ -33,10 +30,6 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
-  let xpAdd = Math.floor(Math.random() * 7) + 8;
-  console.log(xpAdd);
-
-  
   let prefix = botconfig.prefix;
   if(!message.content.startsWith(prefix)) return;
   let messageArray = message.content.split(" ");
