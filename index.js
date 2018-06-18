@@ -1,8 +1,9 @@
 const Discord = require("discord.js");
-const botconfig = require("../botconfig.json");
+const botconfig = require("./botconfig.json");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
+
 
 fs.readdir("./commands/", (err, files) => {
   if (err) console.log(err);
@@ -21,6 +22,7 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
+
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is now online`);
   bot.user.setActivity("Playstation Grenade!", {type: "WATCHING"});
@@ -30,6 +32,7 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
+  
   let prefix = botconfig.prefix;
   if(!message.content.startsWith(prefix)) return;
   let messageArray = message.content.split(" ");
