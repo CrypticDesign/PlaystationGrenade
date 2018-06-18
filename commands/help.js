@@ -15,7 +15,8 @@ module.exports.run = async (bot, message, args) => {
      .addField("help", "Gives you a list of commands!")
      .addField("ping", "Pong! (Checks Ping)")
      .addField("weather", "Check the weather in a certain area! [Usage: ps!weather <location>]")
-     .addField("serverinfo", "Check the info of the server you're in!");
+     .addField("serverinfo", "Check the info of the server you're in!")
+     .addField("clear", "Clear Messages (Moderator Only)");
      
     return message.channel.send(hembed);
     
